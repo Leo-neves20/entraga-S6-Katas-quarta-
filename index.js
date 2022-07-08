@@ -10,80 +10,14 @@ console.log(calculateSalary(900,1200))
 
 //----------- KATAS 2 ----------
 
-
-//----------- Calcula apenas o o valor recebido de comissão ---------------
-    function totalComissao(sal){
-
-     let totalComissao = calculateSalary(sal, 1300) - sal
-
-     return totalComissao
-
-    }
-//-------------------------------------------------------------
-
-
 function cashMachine(valSaque, valSalFixo, valVendas){
 
-    let saldo = valSalFixo + valVendas
+    let saldo = calculateSalary(valSalFixo, valVendas)
     let saque = valSaque
 //                  200 100 50 20 10 5  2 
     let NotasSaque = [0, 0, 0, 0, 0, 0, 0]
     let saldoFinal = (saldo - saque)
     
-    
-    
-    /* 
-        Tentei fazer o código abaixo e está funcionando, contudo só funciona até um certo ponto, pois quando coloco um número que precise da nota 2, essa não é contabilizada e só vai até a nota 5.
-    
-    
-                            for(let i = 1; i <= saque; i++){
-
-                                if(saque >= 200){
-
-                                    NotasSaque[0]++
-                                    
-                                    saque -= 200
-
-                                }else if(saque >= 100){
-
-                                    NotasSaque[1]++
-                                    
-                                    saque -= 100
-
-                                }else if(saque >= 50){
-
-                                    NotasSaque[2]++
-                                    
-                                    saque -= 50
-
-                                }else if(saque >= 20){
-                                                            
-                                    NotasSaque[3]++
-                                    
-                                    saque -= 20
-
-                                }else if(saque >= 10){
-
-                                    NotasSaque[4]++
-                                    
-                                    saque -= 10
-
-                                }else if(saque >= 5){
-
-                                    NotasSaque[5]++
-                                    
-                                    saque -= 5
-
-                                }else if(saque >= 2 ){
-
-                                    NotasSaque[6]++
-                                    
-                                    saque -= 2
-
-                                }
-
-                            } */
-
     if(saque !== 0){
 
         while(saque >= 200){
@@ -183,7 +117,7 @@ function cashMachine(valSaque, valSalFixo, valVendas){
 
 }
 
-console.log(cashMachine(307, 900, totalComissao(1300)))
+console.log(cashMachine(307, 900, 1300))
 
 
 //----------- KATAS 3 ----------
